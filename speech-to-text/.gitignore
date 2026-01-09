@@ -1,0 +1,16 @@
+# Fichiers de configuration avec clés sensibles
+.env
+
+# Fichiers audio temporaires
+*-audio.wav
+
+# Fichiers de transcription
+*-transcription.*
+transcription.*
+
+# Scripts Python temporaires
+transcribe_temp.py
+
+# Cache Python
+__pycache__/
+*.pyc
