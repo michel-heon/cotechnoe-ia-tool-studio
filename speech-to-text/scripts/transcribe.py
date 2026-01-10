@@ -7,6 +7,7 @@ from datetime import timedelta
 # Configuration - A configurer via variables d'environnement
 speech_key = os.getenv('SPEECH_KEY')
 service_region = os.getenv('SERVICE_REGION', 'canadaeast')
+language = os.getenv('LANGUAGE', 'fr-FR')
 audio_file = os.getenv('AUDIO_FILE', 'audio.wav')
 base_output = os.getenv('OUTPUT_BASE', 'transcription')
 
@@ -15,13 +16,13 @@ if not speech_key:
     print("   Definissez la variable d'environnement SPEECH_KEY")
     exit(1)
 
-print("Démarrage de la transcription...")
+print("Demarrage de la transcription...")
 print(f"Fichier audio: {audio_file}")
-print(f"Langue: français (fr-FR)")
+print(f"Langue: {language}")
 
 # Configuration du service Speech
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
-speech_config.speech_recognition_language = "fr-FR"
+speech_config.speech_recognition_language = language
 speech_config.request_word_level_timestamps()
 speech_config.output_format = speechsdk.OutputFormat.Detailed
 

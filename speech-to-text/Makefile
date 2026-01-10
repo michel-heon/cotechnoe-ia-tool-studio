@@ -43,7 +43,7 @@ $(OUTPUT_TXT): $(AUDIO_WAV)
 		exit 1; \
 	fi
 	@echo "Transcription de $(AUDIO_WAV) en $(LANGUAGE)..."
-	@SPEECH_KEY="$(SPEECH_KEY)" SERVICE_REGION="$(SERVICE_REGION)" LANGUAGE="$(LANGUAGE)" AUDIO_FILE="$(AUDIO_WAV)" OUTPUT_BASE="$(OUTPUT_BASE)" $(PYTHON) $(SCRIPT_DIR)/transcribe_simple.py
+	@SPEECH_KEY="$(SPEECH_KEY)" SERVICE_REGION="$(SERVICE_REGION)" LANGUAGE="$(LANGUAGE)" AUDIO_FILE="$(AUDIO_WAV)" OUTPUT_BASE="$(OUTPUT_BASE)" $(PYTHON) $(SCRIPT_DIR)/transcribe.py
 
 clean:
 	@echo "Nettoyage des fichiers generes..."
